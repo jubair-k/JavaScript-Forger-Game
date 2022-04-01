@@ -78,6 +78,44 @@
     box-shadow: 2px 3px 10px 2px rgba(0, 0, 0,1);
 }
 
+.handles{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+.handles .fa{
+    color: #231f20;
+    font-size: 2rem;
+    font-weight: bolder;
+    padding: 5px 15px;
+    background-color: #bccce6;
+    border-radius: 10px;
+    margin-right: 5px;
+    box-shadow: 0px 0px 4px .5px rgba(0, 0, 0,.3);
+}
+
+#popmessage{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fcbc0d;
+    padding: 10px 20px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+#popmessage p{
+    color: #000;
+}
+#popmessage .fa-times{
+    color: rgb(194, 42, 73);
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
 
 @media screen and (min-width: 600px) {
     .grid{

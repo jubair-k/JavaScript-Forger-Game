@@ -6,8 +6,15 @@ document.addEventListener("DOMContentLoaded",function(){
     const carsLeft=document.querySelectorAll('.car-left')
     const carsRight=document.querySelectorAll('.car-right')
     const logsLeft=document.querySelectorAll('.log-left')
-    const logsRight=document.querySelectorAll('.log-right')
-    const width=9
+    const logsRight=document.querySelectorAll('.log-right');
+    const closepop=document.querySelector('.fa-times');
+    const popmessage=document.getElementById('popmessage');
+
+    message=setTimeout(() => {
+        popmessage.remove();
+    }, 5000);
+    
+    const width=9;
     let currentTime=15
     let currentIndex=76
     let timerId
@@ -31,6 +38,27 @@ document.addEventListener("DOMContentLoaded",function(){
             case 40:
                 if(currentIndex + width <width * width) currentIndex +=width
                 break 
+        }
+        squers.forEach(item=>{item.classList.remove('frog')})
+        squers[currentIndex].classList.add('frog')
+        lose()
+        win()
+    }
+
+    function moveFrogTouch(e){
+        squers[currentIndex].classList.add('frog')
+
+        if(e.target.classList.contains('fa-angle-right')){
+            if(currentIndex % width < width -1) currentIndex+=1 
+        }
+        else if(e.target.classList.contains('fa-angle-up')){
+            if(currentIndex -width >=0) currentIndex -=width    
+        }
+        else if(e.target.classList.contains('fa-angle-left')){
+            if(currentIndex % width !==0) currentIndex-=1  
+        }
+        else if(e.target.classList.contains('fa-angle-down')){
+            if(currentIndex + width <width * width) currentIndex +=width 
         }
         squers.forEach(item=>{item.classList.remove('frog')})
         squers[currentIndex].classList.add('frog')
@@ -146,6 +174,7 @@ document.addEventListener("DOMContentLoaded",function(){
             squers[currentIndex].classList.remove('frog')
             clearInterval(timerId)
             document.removeEventListener('keyup',moveFrog)
+            document.removeEventListener('touchstart',moveFrogTouch,false);
         }
     }
 
@@ -159,6 +188,7 @@ document.addEventListener("DOMContentLoaded",function(){
             squers[currentIndex].classList.remove('frog')
             clearInterval(timerId)
             document.removeEventListener('keyup',moveFrog)
+            document.removeEventListener('touchstart',moveFrogTouch,false);
         }
 
     }
@@ -202,8 +232,13 @@ document.addEventListener("DOMContentLoaded",function(){
         }
         else{
             timerId=setInterval(movePeices,1000)
-            document.addEventListener('keyup',moveFrog)
+            document.addEventListener('keyup',moveFrog);
+            document.addEventListener('touchstart',moveFrogTouch,false);
         }
     })
+
+    closepop.addEventListener('click',function(){
+        popmessage.remove();
+    });
 
 })

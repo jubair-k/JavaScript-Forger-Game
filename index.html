@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>Forger Game</title>
 </head>
 <body>
     <section class="container">
+        <div id="popmessage">
+            <p>For better experience use keyboard !</p>
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+
         <h2 id="result"></h2>
         <h3>Second left : <span id="time-left">15</span></h3>
     
@@ -94,6 +100,17 @@
             <div></div>
             <div></div>
             <div></div>
+        </div>
+
+        <div class="handles">
+            <div class="verticle">
+                <i class="fa fa-angle-up" aria-hidden="true"></i>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </div>
+            <div class="horizontal">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
         </div>
 
         <button id="button">Start/Restart</button>
