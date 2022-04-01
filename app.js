@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded",function(){
     const logsLeft=document.querySelectorAll('.log-left')
     const logsRight=document.querySelectorAll('.log-right')
     const width=9
-    let currentTime=20
+    let currentTime=15
     let currentIndex=76
     let timerId
 
@@ -153,12 +153,14 @@ document.addEventListener("DOMContentLoaded",function(){
     function lose(){
         if((currentIndex==0) || (squers[currentIndex].classList.contains('c1'))
         || (squers[currentIndex].classList.contains('l5'))
-        || (squers[currentIndex].classList.contains('l4'))){
+        || (squers[currentIndex].classList.contains('l4'))
+        || (currentTime==0)){
             results.innerHTML="YOU LOSE!"
             squers[currentIndex].classList.remove('frog')
             clearInterval(timerId)
             document.removeEventListener('keyup',moveFrog)
         }
+
     }
 
 
@@ -196,12 +198,12 @@ document.addEventListener("DOMContentLoaded",function(){
     startBtn.addEventListener('click',()=>{
         if(timerId){
             clearInterval(timerId)
+            document.location.reload();
         }
         else{
             timerId=setInterval(movePeices,1000)
             document.addEventListener('keyup',moveFrog)
         }
     })
-
 
 })
