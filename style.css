@@ -83,9 +83,10 @@
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 0 20px;
 }
 .handles .fa{
+    display: inline-block;
     color: #231f20;
     font-size: 2rem;
     font-weight: bolder;
@@ -93,7 +94,9 @@
     background-color: #bccce6;
     border-radius: 10px;
     margin-right: 5px;
-    box-shadow: 0px 0px 4px .5px rgba(0, 0, 0,.3);
+    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0,.8);
+    width: 50px;
+    text-align: center;
 }
 
 #popmessage{
@@ -121,6 +124,12 @@
     .grid{
         width: 400px ;
         height: 400px;
+    }
+    .handles{
+        justify-content: center;
+    }
+    .handles .fa{
+        margin-right: 10px;
     }
 
 }
